@@ -8,5 +8,12 @@
     <string name="login">Login</string>
     <string name="password">Mot de passe</string>
     <string name="validate">valider</string>
+    <string name="logo">logo</string>
+    <string name="reminder">Rappel</string>
+    <string name="add">Ajouter</string>
+    <string name="search">Recherche</string>
+    <string name="logout">Rechercher</string>
+    <string name="return">Retour</string>
+    <string name="mapview">MapView</string>
 
 </resources>

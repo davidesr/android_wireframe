@@ -1,0 +1,22 @@
+<resources>
+
+    <string name="app_name">Wiresup1.0</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="terms">Terms and conditions</string>
+    <string name="login">Login</string>
+    <string name="password">Mot de passe</string>
+    <string name="validate">valider</string>
+    <string name="logo">logo</string>
+    <string name="reminder">Rappel</string>
+    <string name="add">Ajouter</string>
+    <string name="search">Recherche</string>
+    <string name="logout">Rechercher</string>
+    <string name="back">Retour</string>
+    <string name="mapview">MapView</string>
+    <string name="help">Aide »</string>
+    <string name="title_activity_webview">WebviewActivity</string>
+
+</resources>
