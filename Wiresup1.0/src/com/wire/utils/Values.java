@@ -11,7 +11,7 @@ public class Values {
 	public final static String WS_CALLER_ID="ipponTech";
 	public final static String WS_CALLER_SECRET="secret";
 	public final static String LABEL_WS_CALLER_ID ="wsCallerId";
-	public final static String LABEL_WS_CALLER_SECRET ="";
+	public final static String LABEL_WS_CALLER_SECRET ="wsCallerSecret";
 	public final static String LABEL_HASH ="hash";
 	public final static String LABEL_LOGIN ="identifiant";
 	public final static String LABEL_PASSWORD ="password";
@@ -31,8 +31,8 @@ public class Values {
 	
 	public final static String LABEL_SESSION_TOKEN = "sessionToken";
 	
-	public final static String URL_LOGIN="http://localhost:8080/ab_service_mgr/api/mobile/login/";
-	public final static String URL_LOGOUT="http://localhost:8080/ab_service_mgr/api/mobile/logout/";
+	public final static String URL_LOGIN="http://10.0.2.2:8080/ab_service_mgr/api/mobile/login/";
+	public final static String URL_LOGOUT="http://10.0.2.2:8080/ab_service_mgr/api/mobile/logout/";
 	public final static String REQUEST_METHOD ="POST";
 	public final static String LABEL_CONTENT_TYPE ="Content-Type";
 	public final static String CONTENT_TYPE ="application/json";
@@ -44,5 +44,7 @@ public class Values {
 	public final static String ERROR_MESSAGE_CONNECTION_SERVEUR = "Identifiant et/ou Mot de passe incorrects. ";
 	
 	
+	public final static String ERROR_TITLE_EMPTY_PARAMETERS = "Erreur Connexion";
+	public final static String ERROR_MESSAGE_EMPTY_PARAMETERS =" Veuillez renseigner vos identifiants et mot de passe";
 }
 
