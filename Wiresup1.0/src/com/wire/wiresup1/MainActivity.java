@@ -144,6 +144,8 @@ public class MainActivity extends Activity {
 				break;
 
 			case R.id.help : 
+				i.setClass(context,HomeActivity.class);
+				
 				i.putExtra("url", Values.URL_HELP_WEB_VIEW);
 				setResult(RESULT_OK,i);
 				context.startActivity(i);
