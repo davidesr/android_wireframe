@@ -56,6 +56,13 @@
             </intent-filter>
         </activity>
         
+        <!-- Ajout des libraries google maps MàJ 14102012 -->
+        <uses-library android:name="com.google.android.maps"/>
+        <activity 
+            android:name=".MapviewActivity" 
+            android:label="@string/app_name"
+    		android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
     </application>
 
 </manifest>
