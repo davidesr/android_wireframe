@@ -13,15 +13,27 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.wire.model.UserSingleton;
+import com.wire.wiresup1.MainActivity;
 
+
+import android.app.AlertDialog;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
 public class WebserviceRequestAsyntask extends
 		AsyncTask<String, Integer, String> {
 
+	Context context;
+	
+	
+	public WebserviceRequestAsyntask(Context context){
+		this.context=context;
+	}
 	
 	
 	@Override
@@ -78,12 +90,38 @@ public class WebserviceRequestAsyntask extends
         httpclient.getConnectionManager().shutdown();   
         Log.i("WSRA", result);
         
+      
+        try {
+			JSONObject jresponse = readResponse(result);
+			
+			if(jresponse.getString(Values.LABEL_STATUS).equals("true")){
+				String SessionToken = jresponse.getString(Values.LABEL_SESSION_TOKEN);
+				UserSingleton.getInstance().forLoginSucceed(login,password,SessionToken);
+			}
+				
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        
+        
         
      // end callWebService()  	
 		return result;
 		
 		
 		
+		
+	}
+	
+	
+
+	private JSONObject readResponse(String response) throws JSONException{
+		JSONObject jresponse = new JSONObject(response);
+		
+		return jresponse;
 		
 	}
 	
@@ -101,4 +139,6 @@ public class WebserviceRequestAsyntask extends
 		return jso.toString();
 	}
 
+	
+	
 }

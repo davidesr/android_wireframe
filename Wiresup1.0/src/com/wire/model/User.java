@@ -22,7 +22,8 @@ public class User implements Serializable{
 	String country;
 	String telephone;
 	String email;
-
+	String urlPhoto;
+	
 	public User(String lgi,String pswd){
 		this.login=lgi;
 		this.password=pswd;

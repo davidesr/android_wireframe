@@ -8,6 +8,7 @@ package com.wire.wiresup1;
 //import org.json.JSONObject;
 
 import com.google.android.maps.MapView;
+import com.wire.model.UserSingleton;
 import com.wire.utils.Values;
 //import com.wire.utils.WebServiceRequest;
 import com.wire.utils.WebserviceRequestAsyntask;
@@ -50,6 +51,9 @@ public class MainActivity extends Activity {
 		validate = (Button) this.findViewById(R.id.validate);
 	}
 
+	public Context getContext(){
+		return this;
+	}
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -81,6 +85,7 @@ public class MainActivity extends Activity {
 		ad.setTitle(title);
 		ad.setMessage(message);
 		ad.show();
+		
 	}
 	private boolean checkInternetConnection() {
 		ConnectivityManager conMgr = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);  
@@ -144,10 +149,13 @@ public class MainActivity extends Activity {
 				context.startActivity(i);
 				break;
 			
+			/*	
+			 * Max Test Lancement Vers une mapview
 			case R.id.mapview :
 				i.setClass(context, MapView.class);
 				break;
 				
+			*/
 			case R.id.help : 
 				i.setClass(context,HomeActivity.class);
 				
@@ -163,49 +171,17 @@ public class MainActivity extends Activity {
 				if (!checkInternetConnection()) // Vérifier la connexion.
 					return;
 
-				
+				Log.v("ValiderButton","Récupération des login/password");
 
 				String value_login = login.getText().toString();
 				String value_password = password.getText().toString();
 
-				WebserviceRequestAsyntask wsa = new WebserviceRequestAsyntask();
+				WebserviceRequestAsyntask wsa = new WebserviceRequestAsyntask(getContext());
 				wsa.execute(value_login,value_password);
-
-				/*try{
-    				//WebServiceRequest wsr = new WebServiceRequest();
-    				//JSONObject response = wsr.loginRequest(value_login, value_password);
-
-
-
-    				/*if(!response.has(Values.LABEL_SESSION_TOKEN)){
-    					LayoutInflater inflater = getLayoutInflater();
-    					View layout = inflater.inflate(R.layout.toast_layout,
-    					(ViewGroup) findViewById(R.id.toast_layout_root));
-
-    					TextView text = (TextView) layout.findViewById(R.id.text);
-    					text.setText(Values.ERROR_MESSAGE_CONNECTION_SERVEUR);
-
-    					Toast toast = new Toast(getApplicationContext());
-    					toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-    					toast.setDuration(Toast.LENGTH_LONG);
-    					toast.setView(layout);
-    					toast.show();
-
-
-    			}
-    			catch(JSONException e){
-    				Log.v("ERROR_CONNECTION_LOGIN", e.getMessage());
-    			}
-    			catch(NoSuchAlgorithmException e1){
-    				Log.v("ERROR_CONNECTION_LOGIN", e1.getMessage());	
-    			}
-    			catch(MalformedURLException e2){
-    				Log.v("ERROR_CONNECTION_LOGIN", e2.getMessage());
-    			}
-    			catch(IOException e3){
-    				Log.v("ERROR_CONNECTION_LOGIN", e3.getMessage());
-    			}
-				 */
+				
+				// Si le singleton est vide alors la connexion n'a pas eu lieu.
+				if(!UserSingleton.getInstance().isConnected())
+					createAlertDialog(Values.ERROR_TITLE_EMPTY_PARAMETERS,Values.ERROR_MESSAGE_WRONG_PARAMETERS);
 			}
 			break;
 

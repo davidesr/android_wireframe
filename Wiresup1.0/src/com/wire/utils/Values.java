@@ -46,5 +46,7 @@ public class Values {
 	
 	public final static String ERROR_TITLE_EMPTY_PARAMETERS = "Erreur Connexion";
 	public final static String ERROR_MESSAGE_EMPTY_PARAMETERS =" Veuillez renseigner vos identifiants et mot de passe";
+	public final static String ERROR_MESSAGE_WRONG_PARAMETERS = "Les identifiant et/ou mot de passe sont incorrects";
+	public static final String LABEL_STATUS = "status";
 }
 
