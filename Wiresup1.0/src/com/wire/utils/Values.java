@@ -8,9 +8,6 @@ package com.wire.utils;
  */
 public class Values {
 
-	
-	//Test modifs mameu
-	//TEST MODIF 18:41
 	public final static String WS_CALLER_ID="ipponTech";
 	public final static String WS_CALLER_SECRET="secret";
 	public final static String LABEL_WS_CALLER_ID ="wsCallerId";

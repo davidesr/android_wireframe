@@ -6,7 +6,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class Sha1Utils {
-
+// COUCOU 2
 	/**
 	 * encryptage SHA-1
 	 * 
