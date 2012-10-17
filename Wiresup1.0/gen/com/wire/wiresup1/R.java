@@ -65,6 +65,7 @@ public final class R {
         public static final int activity_terms_conditions=0x7f030004;
         public static final int activity_webview=0x7f030005;
         public static final int toast_layout=0x7f030006;
+        public static final int activity_mapview=0x7f030007;
     }
     public static final class menu {
         public static final int activity_main=0x7f060000;

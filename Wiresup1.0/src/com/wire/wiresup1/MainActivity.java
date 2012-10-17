@@ -7,6 +7,7 @@ package com.wire.wiresup1;
 //import org.json.JSONException;
 //import org.json.JSONObject;
 
+import com.google.android.maps.MapView;
 import com.wire.utils.Values;
 //import com.wire.utils.WebServiceRequest;
 import com.wire.utils.WebserviceRequestAsyntask;
@@ -142,7 +143,11 @@ public class MainActivity extends Activity {
 				setResult(RESULT_OK,i);
 				context.startActivity(i);
 				break;
-
+			
+			case R.id.mapview :
+				i.setClass(context, MapView.class);
+				break;
+				
 			case R.id.help : 
 				i.setClass(context,HomeActivity.class);
 				
