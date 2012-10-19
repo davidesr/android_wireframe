@@ -23,6 +23,7 @@ public class User implements Serializable{
 	String telephone;
 	String email;
 	String urlPhoto;
+	//idofjsjfpodjfpoidfjsoifdjsp
 	
 	public User(String lgi,String pswd){
 		this.login=lgi;
